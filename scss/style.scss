@@ -1,0 +1,112 @@
+/* 
+   Just copy these `.navbar-offcanvas` classes 
+   to your SCSS/LESS file and style away 
+   
+   I have included simple styling below as `.navbar-blue`
+*/
+
+
+.navbar-offcanvas {
+    .navbar-toggle {
+        .icon-bar {
+            background-color: #fff;
+            margin-left: auto;
+            margin-right: auto;
+
+            transition: transform 300ms cubic-bezier(.55,0,.1,1), opacity 300ms cubic-bezier(.55,0,.1,1);
+            will-change: transform, opacity;
+
+            &:nth-child(2) {
+                transform: rotate(45deg) translateY(5px) translateX(4px);
+            }
+
+             &:nth-child(3) {
+                opacity: 0;
+            }
+
+            &:nth-child(4) {
+                transform: rotate(-45deg) translateY(-5px) translateX(3px);
+            }
+        }
+
+        &.collapsed {
+            .icon-bar {
+                opacity: 1;
+                transform: rotate(0) translateY(0) translateX(0);
+            }
+        }
+    }
+
+    .navbar-collapse {
+        background: #fff;
+        border-right: 1px solid;
+        border: none;
+        display: block !important;
+        height: calc(100vh - 50px) !important;
+        position: fixed;
+        width: 80%;
+        max-width: 350px;
+        z-index: 1;
+
+        transform: translate(0,0);
+
+
+        transition: transform 300ms cubic-bezier(.55,0,.1,1);
+        will-change: transform;
+        
+        &, &[aria-expanded="false"] {
+            transform: translate(-100%, 0);
+        }
+        &[aria-expanded="true"] {
+            transform: translate(0,0);
+        }
+    }
+}
+
+.navbar-blue {
+  background: #1E88E5;
+  border: none;
+  border-radius: 0;
+  color: #fff;
+  
+  .navbar-brand {
+    color:#fff;
+  }
+  .navbar-nav {
+    a {
+      color: #333;
+    }
+  }
+}
+
+body {
+  background: #ddd;
+}
+@media (min-width: 768px) {
+
+    .navbar-offcanvas {
+
+        .navbar-collapse {
+            background: transparent;
+            height: auto !important;
+            width: auto;
+            max-width: none;
+            position: static;
+            transform: translate(0,0) !important;
+        }
+    }
+  
+  .navbar-blue {
+    .navbar-nav {
+      > li {
+        > a {
+          color: #fff;
+        }
+        &.open > a,
+        > a:hover {
+          color:#333;
+        }
+      }
+    }
+  }
+}

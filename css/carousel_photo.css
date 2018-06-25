@@ -1,0 +1,170 @@
+:root {
+    --sb-black: #000;
+    --sb-darkgrey: #5c554f;
+    --sb-grey: #827a6f;
+    --sb-lightgrey: #cec7b5;
+    --sb-white: #f7f4eb;
+    --sb-red: #cd4d4c;
+    --sb-green: #4f5e4f;
+    --sb-brown: #6e4c43;
+    --sb-yellow: #ecd189;
+    --sb-tan: #ffc5b0;
+    --sb-lightblue: #b7deed;
+    --sb-blue: #424f6f;
+}
+
+@font-face {
+    font-family: 'GT Haptik';
+    font-style: normal;
+    font-weight: normal;
+    src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/59639/gt-haptik-regular-webfont.woff2') format('woff2'),
+    url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/59639/gt-haptik-regular-webfont.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'GT Haptik';
+    font-style: normal;
+    src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/59639/gt-haptik-bold-webfont.woff2') format('woff2'),
+    url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/59639/gt-haptik-bold-webfont.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'GT Haptik';
+    font-style: normal;
+    font-weight: 900;
+    src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/59639/gt-haptik-black-webfont.woff2') format('woff2'),
+    url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/59639/gt-haptik-black-webfont.woff') format('woff');
+}
+
+
+.carousel {
+    height: 80%;
+    overflow: hidden;
+    position: relative;
+    top: 10%;
+    width: 100%;
+}
+
+.itemsNext {
+    display: flex;
+    height: 100%;
+    transition: -webkit-transform 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+    width: 100%;
+}
+
+.itm {
+    flex-shrink: 0;
+    height: 100%;
+    position: ;
+    width: 100%;
+}
+.itm img {
+    display: block;
+    height: 100%;
+    width: 100%;
+    margin: auto;
+}
+.itm[data-current="true"][data-direction="next"] {
+    -webkit-animation: jazzItUpNext 0.9s ease-in-out;
+    animation: jazzItUpNext 0.9s ease-in-out;
+}
+.itm[data-current="true"][data-direction="previous"] {
+    -webkit-animation: jazzItUpPrevious 0.9s ease-in-out;
+    animation: jazzItUpPrevious 0.9s ease-in-out;
+}
+
+.arrow {
+    cursor: pointer;
+    height: 20px;
+    width: 20px;
+    margin-top: -10px;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    font-weight: 900 !important;
+}
+.arrow:active {
+    opacity: 0.9;
+    font-weight: 900 !important;
+}
+.arrow[data-disabled="true"] {
+    opacity: 0.5;
+    pointer-events: none;
+    font-weight: 900 !important;
+}
+
+.next {
+    border-right: 5px solid var(--sb-red);
+    border-top: 5px solid var(--sb-red);
+    right: 40px;
+    font-weight: bolder !important;
+}
+
+.previous {
+    border-bottom: 5px solid var(--sb-red);
+    border-left: 5px solid var(--sb-red);
+    left: 40px;
+}
+
+@-webkit-keyframes jazzItUpNext {
+    0% {
+        -webkit-filter: drop-shadow(6vw 0 0 var(--sb-white))
+        drop-shadow(6vw 0 0 var(--sb-lightgrey))
+        drop-shadow(6vw 0 0 var(--sb-darkgrey));
+        filter: drop-shadow(6vw 0 0 var(--sb-white))
+        drop-shadow(6vw 0 0 var(--sb-lightgrey))
+        drop-shadow(6vw 0 0 var(--sb-darkgrey));
+    }
+    100% {
+        -webkit-filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0));
+        filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0));
+    }
+}
+
+@keyframes jazzItUpNext {
+    0% {
+        -webkit-filter: drop-shadow(6vw 0 0 var(--sb-white))
+        drop-shadow(6vw 0 0 var(--sb-lightgrey))
+        drop-shadow(6vw 0 0 var(--sb-darkgrey));
+        filter: drop-shadow(6vw 0 0 var(--sb-white))
+        drop-shadow(6vw 0 0 var(--sb-lightgrey))
+        drop-shadow(6vw 0 0 var(--sb-darkgrey));
+    }
+    100% {
+        -webkit-filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0));
+        filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0));
+    }
+}
+
+@-webkit-keyframes jazzItUpPrevious {
+    0% {
+        -webkit-filter: drop-shadow(-6vw 0 0 var(--sb-white))
+        drop-shadow(-6vw 0 0 var(--sb-lightgrey))
+        drop-shadow(-6vw 0 0 var(--sb-darkgrey));
+        filter: drop-shadow(-6vw 0 0 var(--sb-white))
+        drop-shadow(-6vw 0 0 var(--sb-lightgrey))
+        drop-shadow(-6vw 0 0 var(--sb-darkgrey));
+    }
+    100% {
+        -webkit-filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0));
+        filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0));
+    }
+}
+
+@keyframes jazzItUpPrevious {
+    0% {
+        -webkit-filter: drop-shadow(-6vw 0 0 var(--sb-white))
+        drop-shadow(-6vw 0 0 var(--sb-lightgrey))
+        drop-shadow(-6vw 0 0 var(--sb-darkgrey));
+        filter: drop-shadow(-6vw 0 0 var(--sb-white))
+        drop-shadow(-6vw 0 0 var(--sb-lightgrey))
+        drop-shadow(-6vw 0 0 var(--sb-darkgrey));
+    }
+    100% {
+        -webkit-filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0));
+        filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0));
+    }
+}

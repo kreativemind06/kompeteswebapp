@@ -1,0 +1,13 @@
+.c100:after {background: none !important;}
+.votes-content{margin-top: 50px;padding: 0;}
+.filter-contst{min-height: 50px; margin-top: -52px;}
+.filter-contst-mob li{width:50%;}
+.contest-vote-row{margin-bottom: 1px !important;}
+.min-height-200{min-height: 200px}
+.image-gradient{}
+.no-background{background: none !important;}
+.line-height-1em{line-height: 1em !important;}
+.contest_text{}
+.contest_name{font-weight: 600;font-size: 30px;transition: 0.2s;}
+.contest_name:hover, .contest_name:focus, .contest_name:active{font-size: 35px;text-decoration: none;}
+.vote-now{position: relative;margin-bottom: -40px; top: -130px;left: 0;height: 40px;min-width: 150px;font-size: 15px;border: 1px solid #fff;border-radius: 10px !important;}

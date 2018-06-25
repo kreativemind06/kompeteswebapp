@@ -1,0 +1,49 @@
+code that fetch contest
+
+
+ <?php if($countFollowing >=1):?>
+                    <?php foreach($getPost2 as $post2):?>
+
+
+                    <?php
+                    $postType = $post2['post_type'];
+                    $postMediaID = $post2['media_id'];
+
+                    if($postType =='contest'):
+
+
+                        $this->db->where("contest_id = '$postMediaID'");
+                        $getContestFile = $this->db->get("contests")->result();
+
+                        foreach($getContestFile as $getContest):
+
+                            ?>
+                            <!-- open contest -->
+                            <div class="photos_row" style="margin:0px !important !important;">
+                                <div class="photo_title" style="height: 60px;background: #fff;width: 100%; padding: 10px;">
+                                    <div class="logoPhoto" style="padding-top: 5px">
+                                        <img src="<?php echo base_url()?>img/logo.png" width="30" height="30">
+                                        <span> Recommend for you <a href="<?php echo base_url("contests/check/".$getContest->contest_id)?>"><?php echo $getContest->contest_name; ?> Contest</a></span>
+                                    </div>
+                                </div>
+
+                                <div class="photos_content photo_contest" style="">
+                                    <a href="<?php echo base_url("contests/check/".$getContest->contest_id)?>">
+                                        <img src="<?php echo base_url("uploads/contests/".$getContest->contest_picture)?>" width="100%" style="">
+                                    </a>
+
+                                    <div class="photo_contest_info" style="margin-bottom: 100px !important;">
+                                        <h2 class="text-center"><?php echo $getContest->contest_name; ?> Contest</h2>
+                                        <h6 class="text-center"><?php echo $getContest->contest_grand_price; ?></h6>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                        <?php endforeach ?>
+                    <?php endif ?>
+
+                <?php endforeach ?>
+
+                <?php endif ?>
